@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const {createProspect,getAllProspects,getOneProspet,updatedProspect,deleteProspect} = require('../controllers/prospectController');
+router.post('/',  createProspect);
+router.get('/', getAllProspects);
+router.get('/:id', getOneProspet);
+router.put('/:id', updatedProspect);
+router.delete('/:id', deleteProspect);
+router.find('/find/:id',getOneProspet);
+router.get("/stats", getProspectStats);
+module.exports = router;
